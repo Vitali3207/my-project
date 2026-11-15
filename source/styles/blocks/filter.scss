@@ -1,0 +1,80 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.filter__container {
+  @media (min-width: $tablet-width) {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.filter__group {
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  @media (min-width: $tablet-width) {
+    min-width: 223px;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-width: 318px;
+  }
+}
+
+.filter__title {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+
+.filter__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.filter__button-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  padding-bottom: 36px;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    column-gap: 20px;
+    justify-content: center;
+    padding-bottom: 44px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-bottom: 0;
+  }
+}
+
+.filter__button {
+  width: 100%;
+
+  &--apply {
+    color: $color-basic-white;
+  }
+
+  &--reset {
+    color: $color-basic-primary;
+    background-color: $color-basic-white;
+  }
+}

@@ -1,7 +1,25 @@
 /* GLOBAL */
 @import "./common/variables.scss";
+@import "./common/mixins.scss";
 @import "./common/global.scss";
 @import "./common/fonts.scss";
+@import "./common/visually-hidden.scss";
+@import "./common/container.scss";
+@import "./common/list-reset.scss";
+@import "./common/button.scss";
 
 /* BLOCKS */
 @import "./blocks/header.scss";
+@import "./blocks/navigation.scss";
+@import "./blocks/user.scss";
+@import "./blocks/hero.scss";
+@import "./blocks/slide.scss";
+@import "./blocks/advantages.scss";
+@import "./blocks/advantage.scss";
+@import "./blocks/catalog.scss";
+@import "./blocks/filter.scss";
+@import "./blocks/renge-scale.scss";
+@import "./blocks/control.scss";
+@import "./blocks/sort.scss";
+@import "./blocks/card.scss";
+@import "./blocks/pagination.scss";

@@ -1,0 +1,84 @@
+.control {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.control__radio {
+  position: relative;
+  display: flex;
+  width: 24px;
+  height: 24px;
+  background-color: $color-basic-white;
+  border: 2px solid $color-basic-grey;
+  border-radius: 50%;
+}
+
+.control__input[type="radio"]:checked + .control__radio {
+  border: 2px solid $color-basic-primary;
+}
+
+.control__input[type="radio"]:disabled + .control__radio {
+  border: 2px solid $color-ligth-grey;
+}
+
+.control__input[type="radio"]:disabled ~ .control__label {
+  color: $color-basic-grey;
+}
+
+.control__input[type="radio"]:checked + .control__radio::after {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  content: "";
+  background-color: $color-basic-primary;
+  border-radius: 50%;
+}
+
+
+.control__toggle {
+  position: relative;
+  display: flex;
+  width: 42px;
+  height: 24px;
+  background-color: $color-basic-grey;
+  border-radius: 12px;
+
+  &::after {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    content: "";
+    background-color: $color-basic-white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+}
+
+.control__input[type="checkbox"]:checked + .control__toggle {
+  background-color: $color-basic-primary;
+}
+
+.control__input[type="checkbox"]:disabled + .control__toggle {
+  background-color: $color-ligth-grey;
+}
+
+.control__input[type="checkbox"]:disabled ~ .control__label {
+  color: $color-basic-grey;
+}
+
+.control__input[type="checkbox"]:checked + .control__toggle::after {
+  transform: translateX(18px);
+  transition: transform 0.3s;
+}
+
+.control__label {
+  font-size: 16px;
+  line-height: 24px;
+}

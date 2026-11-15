@@ -1,0 +1,122 @@
+.slide {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &--active {
+    display: flex;
+
+    @media (min-width: $desktop-width) {
+      flex-direction: row;
+      column-gap: 30px;
+      justify-content: start;
+      text-align: start;
+    }
+  }
+}
+
+.slide__image-wrapper {
+  margin-bottom: 10px;
+
+  @media (min-width: $tablet-width) {
+    order: 2;
+  }
+
+  @media (min-width: $desktop-width) {
+    order: 1;
+  }
+}
+
+.slide__container {
+  @media (min-width: $tablet-width) {
+    order: 1;
+  }
+
+  @media (min-width: $desktop-width) {
+    order: 2;
+  }
+}
+
+.slide__badge {
+  margin: 0;
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 4%;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-basic-primary;
+}
+
+.slide__title {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: 2%;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 16px;
+    font-size: 56px;
+    line-height: 80px;
+  }
+
+  @media (min-width: $desktop-width) {
+    text-align: start;
+  }
+}
+
+.slide__description {
+  margin: 0;
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
+
+.slide__order {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    justify-content: start;
+  }
+}
+
+.slide__price-wrapper {
+  display: flex;
+  column-gap: 6px;
+  align-items: center;
+}
+
+.slide__old-price {
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  color: $color-basic-primary;
+}
+
+
+.slide__price {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0%;
+}
+
+.slide__button {
+  color: $color-basic-white;
+}

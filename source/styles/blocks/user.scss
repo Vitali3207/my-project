@@ -1,0 +1,39 @@
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.user__link {
+  box-sizing: border-box;
+  padding: 22px;
+
+  &:active {
+    background-color: $color-basic-secondary;
+  }
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 22px;
+  }
+}
+
+.user__link svg {
+  fill: $color-basic-black;
+}
+
+.user__link-text {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: $color-basic-black;
+  }
+}

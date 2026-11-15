@@ -1,0 +1,80 @@
+.sort {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding-bottom: 16px;
+  outline: none;
+
+  @media (min-width: $tablet-width) {
+    gap: 10px;
+    justify-content: end;
+    padding-bottom: 30px;
+  }
+}
+
+.sort__label {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+
+.sort__trigger {
+  z-index: 1;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 4px 10px;
+
+  &:hover,
+  &:focus {
+    background-color: $color-basic-secondary;
+  }
+}
+
+.sort__text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: $color-basic-primary;
+}
+
+.sort__options {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  display: none;
+  background-color: $color-lightest-grey;
+}
+
+.sort:focus-within .sort__options {
+  display: flex;
+  flex-direction: column;
+}
+
+.sort__item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 4px 10px;
+  transition: 0.3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  cursor: pointer;
+}
+
+.sort__item svg {
+  transform: rotate(180deg);
+}
+
+.sort__item input[type="radio"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0%;
+}
