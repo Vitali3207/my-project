@@ -1,10 +1,14 @@
 .advantages__wrapper {
   box-sizing: border-box;
-  padding-top: 50px;
+  padding-top: 49px;
   padding-bottom: 60px;
 
   @media (min-width: $tablet-width) {
-    padding: 60px 30px 100px;
+    padding: 50px 30px 100px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 100px 30px 120px;
   }
 }
 
@@ -22,7 +26,7 @@
   @media (min-width: $desktop-width) {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 50px 30px;
+    gap: 50px 10px;
   }
 }
 
@@ -36,6 +40,10 @@
   text-align: center;
   text-transform: uppercase;
   color: $color-basic-primary;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 5px;
+  }
 }
 
 .advantages__title {

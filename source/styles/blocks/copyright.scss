@@ -1,0 +1,44 @@
+.copyright {
+  box-sizing: border-box;
+  padding-top: 20px;
+  padding-bottom: 30px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 37px;
+    padding-bottom: 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 27px;
+  }
+}
+
+.copyright__link {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: $color-basic-grey;
+  transition: color 0.2s ease-in-out;
+
+  &:hover,
+  &:focus-visible {
+    color: $color-basic-primary;
+  }
+
+  &:active {
+    color: $color-primary-darker;
+  }
+}
+
+.copyright__link svg {
+  fill: currentcolor;
+}
+
+.copyright__text {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  color: inherit;
+}

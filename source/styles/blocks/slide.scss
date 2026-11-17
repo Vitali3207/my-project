@@ -10,14 +10,14 @@
     @media (min-width: $desktop-width) {
       flex-direction: row;
       column-gap: 30px;
-      justify-content: start;
+      justify-content: center;
       text-align: start;
     }
   }
 }
 
 .slide__image-wrapper {
-  margin-bottom: 10px;
+  margin-bottom: 4px;
 
   @media (min-width: $tablet-width) {
     order: 2;
@@ -34,11 +34,13 @@
   }
 
   @media (min-width: $desktop-width) {
+    align-self: flex-start;
     order: 2;
   }
 }
 
 .slide__badge {
+  display: block;
   margin: 0;
   margin-bottom: 4px;
   font-size: 12px;
@@ -48,6 +50,12 @@
   text-align: center;
   text-transform: uppercase;
   color: $color-basic-primary;
+
+  @media (min-width: $desktop-width) {
+    margin-top: 150px;
+    margin-bottom: 4px;
+    text-align: start;
+  }
 }
 
 .slide__title {
@@ -72,11 +80,15 @@
 
 .slide__description {
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 21px;
 
   @media (min-width: $tablet-width) {
     font-size: 20px;
     line-height: 32px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 40px;
   }
 }
 
@@ -92,6 +104,7 @@
   }
 
   @media (min-width: $desktop-width) {
+    column-gap: 22px;
     justify-content: start;
   }
 }

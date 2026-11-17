@@ -34,33 +34,10 @@ input[type="number"] {
   appearance: textfield;
 }
 
-.noUi-target {
-  box-sizing: border-box;
-  width: 100%;
-  height: 2px;
-  padding: 0 12px;
-  background-color: $color-ligth-grey;
-  border: none;
-  box-shadow: none;
-}
-
-.noUi-connect {
-  background-color: $color-basic-primary;
-}
-
-.noUi-handle::after,
-.noUi-handle::before {
+.desktop-only {
   display: none;
-}
 
-.noUi-horizontal .noUi-handle {
-  top: -11px;
-  right: -12px;
-  width: 24px;
-  height: 24px;
-  background-color: $color-basic-white;
-  border: 2px solid $color-basic-primary;
-  border-radius: 50%;
-  box-shadow: none;
-  cursor: pointer;
+  @media (min-width: $desktop-width) {
+    display: block;
+  }
 }

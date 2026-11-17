@@ -1,0 +1,126 @@
+.nav__title {
+  margin: 0;
+  margin-bottom: 18px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 2%;
+  color: $color-basic-primary;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 17px;
+
+    &--contacts {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 16px;
+
+    &--contacts {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.nav__list {
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 10px;
+  }
+}
+
+.nav__item {
+  box-sizing: border-box;
+  margin-right: -20px;
+  margin-left: -20px;
+  padding: 20px 20px 27px;
+  border-bottom: 1px solid $color-basic-secondary;
+
+  &:last-child {
+    padding-bottom: 21px;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+  }
+}
+
+.nav__sublist {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.nav__sublink {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 2%;
+  text-transform: uppercase;
+  color: $color-basic-black;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    color: $color-primary-lighter;
+  }
+
+  &:active {
+    color: $color-primary-darker;
+  }
+}
+
+.nav__phone {
+  font-family: $font-primary;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: $color-basic-black;
+
+  &:hover,
+  &:focus-visible {
+    color: $color-primary-lighter;
+  }
+
+  &:active {
+    color: $color-primary-darker;
+  }
+}
+
+.nav__address {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.nav__container {
+  display: flex;
+  gap: 6px;
+}
+
+.nav__container svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  fill: $color-basic-primary;
+}
+
+.nav__street {
+  margin: 0;
+  font-family: $font-primary;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 20px;
+  letter-spacing: 0%;
+}

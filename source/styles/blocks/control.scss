@@ -12,32 +12,58 @@
   background-color: $color-basic-white;
   border: 2px solid $color-basic-grey;
   border-radius: 50%;
+
+  &::after {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    content: "";
+    background-color: transparent;
+    border-radius: 50%;
+
+    &:hover,
+    &:focus {
+      background-color: $color-primary-opacity;
+    }
+  }
 }
 
 .control__input[type="radio"]:checked + .control__radio {
-  border: 2px solid $color-basic-primary;
+  border-color: $color-basic-primary;
+
+  &::after {
+    background-color: $color-basic-primary;
+  }
 }
 
 .control__input[type="radio"]:disabled + .control__radio {
-  border: 2px solid $color-ligth-grey;
+  border-color: $color-ligth-grey;
+  cursor: not-allowed;
 }
 
 .control__input[type="radio"]:disabled ~ .control__label {
   color: $color-basic-grey;
 }
 
-.control__input[type="radio"]:checked + .control__radio::after {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  display: block;
-  width: 16px;
-  height: 16px;
-  content: "";
-  background-color: $color-basic-primary;
-  border-radius: 50%;
+.control__input[type="radio"]:not(:disabled):hover + .control__radio,
+.control__input[type="radio"]:not(:disabled):focus-visible + .control__radio {
+  border-color: $color-primary-lighter;
+
+  &::after {
+    background-color: $color-primary-opacity;
+  }
 }
 
+.control__input[type="radio"]:checked:disabled + .control__radio::after {
+  background-color: $color-ligth-grey;
+}
+
+.control__input[type="radio"]:not(:checked):disabled + .control__radio::after {
+  background-color: transparent;
+}
 
 .control__toggle {
   position: relative;
@@ -65,6 +91,13 @@
   background-color: $color-basic-primary;
 }
 
+.control__input[type="checkbox"]:not(:disabled):hover + .control__toggle,
+.control__input[type="checkbox"]:not(:disabled):focus-visible + .control__toggle {
+  background-color: $color-primary-opacity;
+  outline: 2px solid $color-primary-lighter;
+  outline-offset: -2px;
+}
+
 .control__input[type="checkbox"]:disabled + .control__toggle {
   background-color: $color-ligth-grey;
 }
@@ -76,6 +109,10 @@
 .control__input[type="checkbox"]:checked + .control__toggle::after {
   transform: translateX(18px);
   transition: transform 0.3s;
+}
+
+.control__input[type="checkbox"]:checked:disabled + .control__toggle::after {
+  background-color: $color-basic-grey;
 }
 
 .control__label {

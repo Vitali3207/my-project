@@ -1,0 +1,31 @@
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.social__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 10px;
+  color: $color-basic-grey;
+
+  &:hover,
+  &:focus-visible {
+    color: $color-basic-primary;
+    background-color: $color-basic-secondary;
+  }
+
+  &:active {
+    color: $color-basic-primary;
+    background-color: $color-primary-opacity;
+  }
+}
+
+.social__link svg {
+  fill: currentcolor;
+}
+

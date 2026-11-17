@@ -1,0 +1,144 @@
+.range-scale__slider {
+  box-sizing: border-box;
+  width: 100%;
+  height: 2px;
+  margin-top: 12px;
+  margin-bottom: 34px;
+  padding: 0 12px;
+  background-color: $color-ligth-grey;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 30px;
+  }
+}
+
+.range-scale__slider .noUi-connects {
+  overflow: visible;
+}
+
+.range-scale__slider .noUi-connect {
+  top: -1px;
+  height: 4px;
+  background-color: $color-primary-lighter;
+}
+
+.range-scale__slider .noUi-handle {
+  position: absolute;
+  top: -11px;
+  right: -12px;
+  width: 24px;
+  height: 24px;
+  background-color: $color-basic-white;
+  border: 2px solid $color-primary-lighter;
+  border-radius: 50%;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+
+  &::before {
+    display: none;
+  }
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    content: "";
+    background-color: transparent;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    background-color: $color-primary-opacity;
+  }
+
+  &:active::after {
+    background-color: $color-basic-primary;
+  }
+}
+
+.range-scale__slider .noUi-active::after {
+  background-color: $color-basic-primary;
+}
+
+.range-scale__slider[disabled] .noUi-connect {
+  background-color: $color-basic-grey;
+}
+
+.range-scale__slider[disabled] .noUi-handle {
+  border-color: $color-basic-grey;
+  cursor: not-allowed;
+  pointer-events: none;
+
+  &::after {
+    display: none;
+  }
+}
+
+.range-scale__inputs {
+  display: flex;
+  column-gap: 18px;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (min-width: $tablet-width) {
+    column-gap: 20px;
+  }
+}
+
+.range-scale__label {
+  width: 100%;
+}
+
+.range-scale__input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  font-family: $font-primary;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: $color-basic-black;
+  background: none;
+  border: 2px solid $color-primary-lighter;
+  border-radius: 4px;
+  outline: none;
+  appearance: none;
+
+  &:focus-visible {
+    border: 2px solid $color-primary-darker;
+  }
+
+  &::placeholder {
+    align-self: center;
+    font-family: $font-primary;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: $color-basic-grey;
+  }
+}
+
+.range-scale__shooting {
+  display: block;
+  min-width: 8px;
+  height: 2px;
+  background-color: $color-basic-grey;
+}

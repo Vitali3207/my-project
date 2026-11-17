@@ -29,6 +29,20 @@
   }
 }
 
+.advantage__image {
+  @media (min-width: $tablet-width) {
+    &--inner {
+      margin-top: 3px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    &--inner {
+      margin-top: 0;
+    }
+  }
+}
+
 .advantage__title {
   margin: 0;
   margin-bottom: 4px;
@@ -50,9 +64,9 @@
 }
 
 .advantage__description {
+  display: block;
   margin: 0;
-  font-size: 14px;
-  line-height: 20px;
+  letter-spacing: 0;
   text-align: center;
 
   @media (min-width: $tablet-width) {

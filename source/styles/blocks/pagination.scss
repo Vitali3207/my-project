@@ -6,8 +6,20 @@
   justify-content: center;
 
   @media (min-width: $tablet-width) {
-    justify-content: end;
+    justify-content: flex-end;
   }
+}
+
+.pagination:has(.pagination__item:first-child > .pagination__link--current) {
+  .pagination__link--arrow-prew,
+  .pagination__link--text-prew {
+    visibility: hidden;
+  }
+}
+
+.pagination:has(.pagination__item:last-child .pagination__link--current) .pagination__link--arrow-next,
+.pagination:has(.pagination__item:last-child .pagination__link--current) .pagination__link--text-next {
+  visibility: hidden;
 }
 
 .pagination__list {
@@ -27,11 +39,27 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   text-align: center;
   color: $color-basic-primary;
   background-color: $color-basic-white;
-  border: 4px;
+  border-radius: 4px;
+
+  &:hover,
+  &:focus-visible {
+    color: $color-basic-white;
+    background-color: $color-primary-lighter;
+  }
+
+  &:active {
+    color: $color-basic-white;
+    background-color: $color-primary-darker;
+  }
+
+  &:disabled {
+    color: $color-basic-white;
+    background-color: $color-ligth-grey;
+  }
 
   &--text-prew,
   &--text-next {
@@ -42,23 +70,29 @@
     font-weight: 600;
     color: $color-basic-black;
     background-color: transparent;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-basic-black;
+      background-color: transparent;
+    }
   }
 
   &--arrow-prew svg {
     transform: rotate(90deg);
-    fill: $color-basic-primary;
+    fill: currentcolor;
   }
 
   &--arrow-next svg {
     transform: rotate(-90deg);
-    fill: $color-basic-primary;
+    fill: currentcolor;
   }
-
 
   @media (min-width: $tablet-width) {
     &--text-prew,
     &--text-next {
       display: flex;
+      padding: 8px 20px;
     }
 
     &--arrow-prew,

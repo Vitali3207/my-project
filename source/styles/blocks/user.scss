@@ -1,11 +1,16 @@
 .user {
   display: flex;
   align-items: center;
+
+  @media (min-width: $desktop-width) {
+    column-gap: 21px;
+  }
 }
 
 .user__link {
   box-sizing: border-box;
   padding: 22px;
+  color: $color-basic-black;
 
   &:active {
     background-color: $color-basic-secondary;
@@ -18,10 +23,19 @@
     justify-content: center;
     padding: 32px 22px;
   }
+
+  @media (min-width: $desktop-width) {
+    padding: 32px 20px;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-basic-primary;
+    }
+  }
 }
 
 .user__link svg {
-  fill: $color-basic-black;
+  fill: currentcolor;
 }
 
 .user__link-text {
@@ -34,6 +48,6 @@
     line-height: 16px;
     letter-spacing: 2%;
     text-transform: uppercase;
-    color: $color-basic-black;
+    color: inherit;
   }
 }

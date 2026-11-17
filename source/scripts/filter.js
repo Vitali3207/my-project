@@ -1,16 +1,17 @@
 const slider = document.getElementById('slider');
 const minPrice = document.getElementById('min-price');
 const maxPrice = document.getElementById('max-price');
-
-// const form = document.querySelector('.filter');
+const form = document.querySelector('.filter');
 
 const MIN_COUNT = 0;
 const MAX_COUNT = 1000;
+const START_MIN = 0;
+const START_MAX = 900;
 
 const initfilter = () => {
   if (slider && window.noUiSlider) {
     noUiSlider.create(slider, {
-      start: [0, 900],
+      start: [START_MIN, START_MAX],
       connect: true,
       range: {
         min: MIN_COUNT,
@@ -31,13 +32,21 @@ const initfilter = () => {
     });
 
     minPrice.addEventListener('change', () => {
-      const inputValue = '' ? MIN_COUNT : Number(minPrice.value);
+      const inputValue = minPrice.value === '' ? MIN_COUNT : Number(minPrice.value);
       slider.noUiSlider.set([inputValue, null]);
     });
 
     maxPrice.addEventListener('change', () => {
-      const inputValue = '' ? MAX_COUNT : Number(maxPrice.value);
+      const inputValue = maxPrice.value === '' ? MAX_COUNT : Number(maxPrice.value);
       slider.noUiSlider.set([null, inputValue]);
+    });
+  }
+
+  if (form) {
+    form.addEventListener('reset', () => {
+      setTimeout(() => {
+        slider.noUiSlider.set([START_MIN, START_MAX]);
+      }, 0);
     });
   }
 };
